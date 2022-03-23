@@ -1,5 +1,3 @@
-# community
-
 Grab the game from [Itch](https://dorfl.itch.io/factropy).
 
 To report bugs or make serious suggestions please [open an issue here](https://github.com/factropy/community/issues).

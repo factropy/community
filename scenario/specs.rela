@@ -1339,7 +1339,7 @@ function()
 		pipe = true,
 		pipeCapacity = L(100),
 		pipeHints = true,
-		pipeConnections = [[1.5, -1.5, 0.0]],
+		pipeConnections = [ [1.5, -1.5, 0.0] ],
 		materials = {
 			"circuit-board" = 1,
 			"gear-wheel" = 1,
@@ -1901,8 +1901,8 @@ function miner(name, title, toolbar, upgrade, color, energy, materials)
 		capacity = kg(10),
 		rotateGhost = true,
 		footings = [
-			[placement.hill, [0,-3,0]],
-			[placement.land, [0,-3,7]],
+			[placement.hill, [0,-3,0] ],
+			[placement.land, [0,-3,7] ],
 		],
 		crafter = true,
 		crafterRate = 1.0,
@@ -2325,7 +2325,7 @@ function boiler()
 		parts[#parts] = {
 			color = 0xB0C4DEff,
 			transform = trx,
-			lods = [["models/boiler-rivet-hd.stl", high, noshadow]],
+			lods = [ ["models/boiler-rivet-hd.stl", high, noshadow] ],
 		}
 	end
 
@@ -2339,7 +2339,7 @@ function boiler()
 		parts[#parts] = {
 			color = 0xB0C4DEff,
 			transform = trx,
-			lods = [["models/boiler-rivet-hd.stl", high, noshadow]],
+			lods = [ ["models/boiler-rivet-hd.stl", high, noshadow] ],
 		}
 	end
 
@@ -3375,15 +3375,15 @@ function laserTurret(name, title, toolbar, color)
 		ring(color, 0.6-(spacing*6), true),
 	]
 
-	states = [[
+	states = [ [
 		identity,
 		identity,
 		identity,
 		identity,
 		multiple(identity,#rings)...,
-	]]
+	] ]
 
-	states_show = [[
+	states_show = [ [
 		true,
 		true,
 		true,
@@ -3403,7 +3403,7 @@ function laserTurret(name, title, toolbar, color)
 		false,
 		true,
 		false,
-	]]
+	] ]
 
 	for i in 60
 		state = [
@@ -3833,7 +3833,7 @@ add_spec({
 		color = 0x778899FF,
 		gloss = 16,
 		translate = [0,-3,0],
-		lods = [["models/network-repeater-hd.stl", medium, shadow]],
+		lods = [ ["models/network-repeater-hd.stl", medium, shadow] ],
 	}],
 	networker = true,
 	networkInterfaces = 3,
@@ -4056,10 +4056,10 @@ function()
 			west*2.5 + down,
 		],
 		pipeLevels = [
-			[[0,0,0,0.4,1.9,0.2], matrix_translate(0,-0.25,2.48) * matrix_rotate(up,45)],
-			[[0,0,0,0.4,1.9,0.2], matrix_translate(0,-0.25,2.48) * matrix_rotate(up,135)],
-			[[0,0,0,0.4,1.9,0.2], matrix_translate(0,-0.25,2.48) * matrix_rotate(up,225)],
-			[[0,0,0,0.4,1.9,0.2], matrix_translate(0,-0.25,2.48) * matrix_rotate(up,315)],
+			[ [0,0,0,0.4,1.9,0.2], matrix_translate(0,-0.25,2.48) * matrix_rotate(up,45)],
+			[ [0,0,0,0.4,1.9,0.2], matrix_translate(0,-0.25,2.48) * matrix_rotate(up,135)],
+			[ [0,0,0,0.4,1.9,0.2], matrix_translate(0,-0.25,2.48) * matrix_rotate(up,225)],
+			[ [0,0,0,0.4,1.9,0.2], matrix_translate(0,-0.25,2.48) * matrix_rotate(up,315)],
 		],
 		health = 150,
 		networker = true,

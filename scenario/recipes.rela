@@ -527,7 +527,7 @@ add_recipe({
 	title = "Explosive (Atomic)",
 	energy = MJ(50),
 	tags = tags.crafting,
-	input = { "explosive" = 100, "plutonium-239" = 1 },
+	input = { "explosive" = 50, "plutonium-239" = 1 },
 	output = { "explosive-atomic" = 10 },
 })
 

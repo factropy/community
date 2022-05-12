@@ -302,6 +302,7 @@ add_goal({
 		"monocar",
 		"container-shipping",
 		"wifi-tower",
+		"router",
 	],
 	recipes = [
 		"electrolysis",
@@ -405,7 +406,7 @@ add_goal({
 	rates = [
 		{ item = "ammo3", count = 10000 },
 		{ item = "repair-kit3", count = 10000 },
-		{ item = "explosive-atomic", count = 1000 },
+		{ item = "explosive-atomic", count = 100 },
 	],
 })
 

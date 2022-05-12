@@ -30,6 +30,7 @@ colors = {
 	aluminiumOre = 0xFF8C00ff,
 	steel = 0xB0C4DEff,
 	steelDark = 0x90A4BEff,
+	steelBlue = 0x6082b6ff,
 	chevron = 0x444444ff,
 	plastic = 0x1E90FFff,
 	copper = 0xda8a67ff,
@@ -44,6 +45,9 @@ colors = {
 	bronze = 0xcc9922ff,
 	gold = 0xFFD700ff,
 	magic = 0xFF00FFFF,
+	charcoal = 0x3b4248ff,
+	industrialGreen = 0x004225ff,
+	industrialGreen2 = 0x395248ff,
 }
 
 gloss = {
@@ -51,6 +55,10 @@ gloss = {
 	shiny = 4.0,
 	metallic = 16.0,
 	metallicOre = 128.0,
+}
+
+filter = {
+	powdercoat = 1,
 }
 
 toolbar = {

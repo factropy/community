@@ -198,6 +198,7 @@ function conveyorTier(tier, maxTier, steps, color, chevronColor)
 				repeatingPillar,
 				{
 					color = color,
+					filter = filter.powdercoat,
 					translate = [0,-1.25,0],
 					scale = 0.001,
 					lods = [
@@ -306,6 +307,7 @@ function conveyorTier(tier, maxTier, steps, color, chevronColor)
 				repeatingPillar,
 				{
 					color = color,
+					filter = filter.powdercoat,
 					translate = [0,-1.25,0],
 					scale = 0.001,
 					lods = [
@@ -414,6 +416,7 @@ function conveyorTier(tier, maxTier, steps, color, chevronColor)
 				repeatingPillar,
 				{
 					color = color,
+					filter = filter.powdercoat,
 					translate = [0,-1.25,0],
 					scale = 0.001,
 					lods = [
@@ -522,6 +525,7 @@ function conveyorTier(tier, maxTier, steps, color, chevronColor)
 			parts = [
 				{
 					color = color,
+					filter = filter.powdercoat,
 					translate = [0,-1.25,0],
 					scale = 0.001,
 					lods = [
@@ -634,6 +638,7 @@ function conveyorTier(tier, maxTier, steps, color, chevronColor)
 			parts = [
 				{
 					color = color,
+					filter = filter.powdercoat,
 					translate = [0,-1.25,0],
 					scale = 0.001,
 					rotate = [up, 180],
@@ -762,6 +767,7 @@ function conveyorTier(tier, maxTier, steps, color, chevronColor)
 			parts = [
 				{
 					color = color,
+					filter = filter.powdercoat,
 					translate = [0,-1,0],
 					scale = 0.001,
 					lods = [
@@ -878,6 +884,7 @@ function conveyorTier(tier, maxTier, steps, color, chevronColor)
 			parts = [
 				{
 					color = color,
+					filter = filter.powdercoat,
 					translate = [0,-1,0],
 					scale = 0.001,
 					rotate = [up, 180],
@@ -998,6 +1005,7 @@ function conveyorTier(tier, maxTier, steps, color, chevronColor)
 				fixedPillar,
 				{
 					color = color,
+					filter = filter.powdercoat,
 					translate = [0,-1.25,0],
 					scale = 0.001,
 					lods = [
@@ -1147,6 +1155,7 @@ function conveyorTier(tier, maxTier, steps, color, chevronColor)
 			parts = [
 				{
 					color = color,
+					filter = filter.powdercoat,
 					translate = [0,-height/2.0,0],
 					lods = [
 						["models/tube-frame-$(fields.size)-hd.stl", high, shadow],
@@ -1234,6 +1243,7 @@ function conveyorTier(tier, maxTier, steps, color, chevronColor)
 			parts = [
 				{
 					color = color,
+					filter = filter.powdercoat,
 					translate = [0,-height/2.0,0],
 					lods = [
 						["models/tube-frame-$(fields.size)-alt-hd.stl", high, shadow],
@@ -1441,7 +1451,8 @@ function containerSmall(fields)
 		iconV = -0.4,
 		parts = [{
 			color = fields.color,
-			gloss = 16,
+			gloss = gloss.metallic,
+			filter = filter.powdercoat,
 			lods = [
 				["models/container-small-hd.stl", high, shadow],
 				["models/container-small-ld.stl", medium, shadow],
@@ -1472,7 +1483,7 @@ function containerLarge(fields)
 		tipStorage = true,
 		parts = [{
 			color = fields.color,
-			gloss = 16,
+			gloss = gloss.metallic,
 			lods = [
 				["models/container-large-hd.stl", high, shadow],
 				["models/container-large-ld.stl", medium, shadow],
@@ -1547,6 +1558,7 @@ containerSmall({
 	storeUpgradePreserve = true,
 	forceDeleteStore = true,
 	cycle = "container-requester",
+	wiki = "https://github.com/factropy/community/wiki/Container",
 	materials = {
 		"steel-sheet" = 4,
 		"steel-frame" = 2,
@@ -1727,6 +1739,7 @@ function assembler(name, title, toolbar, upgrade, color, energy, materials)
 			{
 				color = color,
 				gloss = gloss.metallic,
+				filter = filter.powdercoat,
 				lods = [
 					["models/assembler-chassis-hd.stl", high, shadow],
 					["models/assembler-chassis-ld.stl", medium, shadow],
@@ -1909,6 +1922,10 @@ function miner(name, title, toolbar, upgrade, color, energy, materials)
 		crafterState = true,
 		crafterOutput = true,
 		crafterOutputPos = [0,-2,8],
+		networker = true,
+		networkInterfaces = 1,
+		networkWifi = [0,2.5,5],
+		crafterTransmitResources = true,
 		enable = true,
 		status = true,
 		beacon = [0,2.5,5],
@@ -1921,11 +1938,13 @@ function miner(name, title, toolbar, upgrade, color, energy, materials)
 		iconD = 6.5,
 		iconV = 0.7,
 		enemyTarget = true,
+		wiki = "https://github.com/factropy/community/wiki/Miner",
 		materials = materials,
 		states = states,
 		parts = [
 			{
 				color = color,
+				filter = filter.powdercoat,
 				lods = [
 					["models/miner-chassis-ld.stl", high, shadow],
 					["models/miner-chassis-ld.stl", medium, shadow],
@@ -1934,7 +1953,7 @@ function miner(name, title, toolbar, upgrade, color, energy, materials)
 			},
 			{
 				color = 0xccccccff,
-				gloss = 16,
+				gloss = gloss.metallic,
 				scale = [3,7,3],
 				rotate = [east,90],
 				translate = [0,0,5.75],
@@ -1999,6 +2018,7 @@ function()
 		iconD = 4,
 		iconV = 0,
 		health = 150,
+		wiki = "https://github.com/factropy/community/wiki/Crusher",
 		enemyTarget = true,
 		pipeHints = true,
 		pipeInputConnections = [
@@ -2018,7 +2038,9 @@ function()
 		states = states,
 		parts = [
 			{
-				color = 0x222222ff,
+				color = 0x333333ff,
+				filter = filter.powdercoat,
+				gloss = gloss.metallic,
 				translate = [0,-2,0],
 				lods = [
 					["models/ore-crusher-frame-hd.stl", high, shadow],
@@ -2078,11 +2100,11 @@ end()
 function furnace(name, title, toolbar, energy, materials)
 
 	states = [
-		[identity, identity, identity, identity, identity, identity],
+		[identity, identity, identity, identity, identity, identity, identity],
 	]
 
 	states_show = [
-		[true, true, false, true, false, false],
+		[true, true, false, true, false, false, false],
 	]
 
 	// turn on, fade in smoke
@@ -2094,9 +2116,10 @@ function furnace(name, title, toolbar, energy, materials)
 			identity,
 			identity,
 			matrix_scale(0.1*(i+1)),
+			identity,
 		]
 		states_show[#states_show] = [
-			true, true, true, true, true, true,
+			true, true, true, true, true, i > 0, i > 0
 		]
 	end
 
@@ -2109,9 +2132,10 @@ function furnace(name, title, toolbar, energy, materials)
 			identity,
 			identity,
 			identity,
+			identity,
 		]
 		states_show[#states_show] = [
-			true, true, true, true, true, true,
+			true, true, true, true, true, true, true,
 		]
 	end
 
@@ -2124,9 +2148,10 @@ function furnace(name, title, toolbar, energy, materials)
 			identity,
 			identity,
 			matrix_scale(0.1*(9-i)),
+			identity,
 		]
 		states_show[#states_show] = [
-			true, true, true, true, true, true,
+			true, true, true, true, true, true, true,
 		]
 	end
 
@@ -2153,12 +2178,14 @@ function furnace(name, title, toolbar, energy, materials)
 		iconD = 3.5,
 		iconV = 0.25,
 		enemyTarget = true,
+		wiki = "https://github.com/factropy/community/wiki/Furnace",
 		materials = materials,
 		states = states,
 		statesShow = states_show,
 		parts = [
 			{
 				color = 0xDAA520FF,
+				filter = filter.powdercoat,
 				lods = [
 					["models/furnace-hd.stl", high, shadow],
 					["models/furnace-ld.stl", medium, shadow],
@@ -2167,7 +2194,7 @@ function furnace(name, title, toolbar, energy, materials)
 			},
 			{
 				color = 0x000000FF,
-				flame = true,
+				glow = true,
 				lods = [
 					["models/furnace-fire-hd.stl", high, noshadow],
 					["models/furnace-fire-ld.stl", medium, noshadow],
@@ -2175,7 +2202,7 @@ function furnace(name, title, toolbar, energy, materials)
 			},
 			{
 				color = 0xf73718FF,
-				flame = true,
+				glow = true,
 				translate = south*0.01,
 				lods = [
 					["models/furnace-fire-hd.stl", high, noshadow],
@@ -2213,6 +2240,11 @@ function furnace(name, title, toolbar, energy, materials)
 					tickLifeUpper = 180,
 				},
 				translate = up*2.0,
+			},
+			{
+				flame = true,
+				translate = south*1.7 + down*0.5,
+				scale = [2,1.2,0.1],
 			}
 		],
 	})
@@ -2228,6 +2260,7 @@ function boiler()
 	parts = [
 		{
 			color = 0xB0C4DEff,
+			filter = filter.powdercoat,
 			rotate = [up, -90],
 			lods = [
 				["models/boiler-chassis-hd.stl", high, shadow],
@@ -2237,7 +2270,7 @@ function boiler()
 		},
 		{
 			color = 0x666666ff,
-			gloss = 16,
+			gloss = gloss.metallic,
 			rotate = [up, -90],
 			lods = [
 				["models/boiler-firebox-hd.stl", high, shadow],
@@ -2264,7 +2297,7 @@ function boiler()
 		},
 		{
 			color = 0xf73718FF,
-			flame = true,
+			glow = true,
 			rotate = [up, -90],
 			translate = up*0.01,
 			lods = [
@@ -2279,7 +2312,7 @@ function boiler()
 			lods = [
 				["models/pipe-straight-hd.stl", high, shadow],
 			],
-		}
+		},
 		{
 			color = colors.pipe,
 			rotate = [up,90],
@@ -2287,7 +2320,7 @@ function boiler()
 			lods = [
 				["models/pipe-straight-hd.stl", high, shadow],
 			],
-		}
+		},
 		{
 			color = colors.pipe,
 			rotate = [up,90],
@@ -2295,7 +2328,7 @@ function boiler()
 			lods = [
 				["models/pipe-straight-hd.stl", high, shadow],
 			],
-		}
+		},
 		{
 			color = 0x111111ff,
 			smoke = {
@@ -2312,6 +2345,11 @@ function boiler()
 				tickLifeUpper = 180,
 			},
 			translate = [0,1,0.6],
+		},
+		{
+			flame = true,
+			translate = [0,1,0.6],
+			scale = [1,0.75,1],
 		}
 	]
 
@@ -2366,9 +2404,11 @@ function boiler()
 		identity,
 		identity,
 		identity,
+		identity,
 	]
 
 	normalShow = [
+		true,
 		true,
 		true,
 		true,
@@ -2411,6 +2451,7 @@ function boiler()
 			identity,
 			identity,
 			identity,
+			identity,
 		]
 		statesShow[#statesShow] = [
 			true,
@@ -2422,6 +2463,7 @@ function boiler()
 			true,
 			true,
 			true,
+			i > 0,
 			true,
 			true,
 			true,
@@ -2461,8 +2503,10 @@ function boiler()
 			identity,
 			identity,
 			identity,
+			identity,
 		]
 		statesShow[#statesShow] = [
+			true,
 			true,
 			true,
 			true,
@@ -2716,7 +2760,7 @@ function()
 		states = states,
 		parts = [
 			{
-				color = 0x004225ff,
+				color = colors.industrialGreen,
 				gloss = 2,
 				rotate = [up,-90],
 				translate = [0,-3.0+0.5,0],
@@ -2758,6 +2802,7 @@ function electrolyser(name, title, toolbar, upgrade, color, energy, materials)
 	parts = [
 		{
 			color = color,
+			filter = filter.powdercoat,
 			gloss = gloss.metallic,
 			lods = [
 				["models/electrolysis-plant-base-hd.stl", high, shadow],
@@ -2964,6 +3009,7 @@ function chemplant(name, title, toolbar, upgrade, color, energy, materials)
 	parts = [
 		{
 			color = color,
+			filter = filter.powdercoat,
 			gloss = gloss.metallic,
 			translate = [0,-0.5,0],
 			lods = [
@@ -3336,7 +3382,7 @@ function laserTurret(name, title, toolbar, color)
 	function ring(color, offset, on)
 		return {
 			color = color,
-			flame = on,
+			glow = on,
 			gloss = gloss.metallic,
 			scale = 2.0,
 			rotate = [up,-90],
@@ -3804,6 +3850,7 @@ add_spec({
 	explosionSpec = "missile-explosion1",
 	align = false,
 	enemy = true,
+	select = false,
 	health = 50,
 	collision = [0, 0, 0, 1, 1, 2],
 	parts = [
@@ -3831,7 +3878,8 @@ add_spec({
 	rotateGhost = true,
 	parts = [{
 		color = 0x778899FF,
-		gloss = 16,
+		filter = filter.powdercoat,
+		gloss = gloss.metallic,
 		translate = [0,-3,0],
 		lods = [ ["models/network-repeater-hd.stl", medium, shadow] ],
 	}],
@@ -3876,6 +3924,7 @@ function()
 			{
 				color = colors.steelDark,
 				gloss = gloss.metallic,
+				filter = filter.powdercoat,
 				translate = [0,-height/2.0,0],
 				lods = [
 					["models/monorail-tower-hd.stl", high, shadow],
@@ -3916,6 +3965,7 @@ function()
 			{
 				color = colors.steelDark,
 				gloss = gloss.metallic,
+				filter = filter.powdercoat,
 				translate = [0,-height/2.0,0],
 				lods = [
 					["models/monorail-tower-tall-hd.stl", high, shadow],
@@ -3951,6 +4001,9 @@ function()
 		consumeElectricity = true,
 		energyConsume = kW(300),
 		cycle = "monorail",
+		networker = true,
+		networkInterfaces = 1,
+		networkWifi = up*(height/2.0) + down*0.25 + south*4.25 + east*4.0,
 		health = 150,
 		materials = {
 			"brick" = 10,
@@ -3963,6 +4016,7 @@ function()
 			{
 				color = colors.steelDark,
 				gloss = gloss.metallic,
+				filter = filter.powdercoat,
 				translate = [0,-height/2.0,0],
 				lods = [
 					["models/monorail-stop-hd.stl", high, shadow],
@@ -4513,6 +4567,7 @@ add_spec({
 	parts = [
 		{
 			color = 0xc5c5c3ff,
+			filter = filter.powdercoat,
 			customColor = true,
 			lods = [
 				["models/slab-hd.stl", high, noshadow],
@@ -4586,3 +4641,241 @@ add_spec({
 	],
 })
 
+add_spec({
+	name = "router",
+	title = "Wifi Router",
+	health = 150,
+	rotateGhost = true,
+	rotateExtant = true,
+	router = true,
+	consumeElectricity = true,
+	energyDrain = W(50),
+	collision = [0, 0, 0, 1, 1, 1],
+	iconD = 1.5,
+	iconV = 0,
+	enable = true,
+	networker = true,
+	networkInterfaces = 2,
+	networkWifi = up*0.5,
+	status = true,
+	beacon = up*0.5,
+	router = true,
+	parts = [
+		{
+			color = 0x3d4849ff,
+			filter = filter.powdercoat,
+			gloss = gloss.metallic,
+			translate = down*0.5,
+			lods = [
+				["models/router-chassis-hd.stl", high, shadow],
+				["models/router-chassis-ld.stl", medium, shadow],
+				["models/router-chassis-vld.stl", verylow, noshadow],
+			],
+		},
+		{
+			color = colors.steel,
+			gloss = gloss.metallic,
+			translate = down*0.5,
+			lods = [
+				["models/router-inset-hd.stl", medium, noshadow],
+			],
+		},
+	],
+	materials = {
+		"steel-frame" = 1,
+		"copper-wire" = 5,
+		"solder" = 2,
+		"mother-board" = 1,
+		"battery" = 1,
+	},
+})
+
+function()
+	states = []
+	statesShow = []
+
+	for i in 10
+		fi = 0.0+i
+		states[#states] = [
+			identity,
+			identity,
+			identity,
+			identity,
+			identity,
+			matrix_scale(0.1*fi, 0.1*fi, 0.1*fi),
+			identity,
+		]
+		statesShow[#statesShow] = [
+			true,
+			true,
+			true,
+			true,
+			true,
+			i > 0,
+			i > 0,
+		]
+	end
+
+	for i in 80
+		states[#states] = [
+			identity,
+			identity,
+			identity,
+			identity,
+			identity,
+			identity,
+			identity,
+		]
+		statesShow[#statesShow] = [
+			true,
+			true,
+			true,
+			true,
+			true,
+			true,
+			true,
+		]
+	end
+
+	for i in 10
+		fi = 9.0-i
+		states[#states] = [
+			identity,
+			identity,
+			identity,
+			identity,
+			identity,
+			matrix_scale(0.1*fi, 0.1*fi, 0.1*fi),
+			identity,
+		]
+		statesShow[#statesShow] = [
+			true,
+			true,
+			true,
+			true,
+			true,
+			true,
+			true,
+		]
+	end
+
+	add_spec({
+		name = "oil-refinery",
+		title = "Oil Refinery",
+		store = true,
+		capacity = kg(100),
+		priority = 10,
+		rotateGhost = true,
+		rotateExtant = true,
+		crafter = true,
+		crafterRate = 1.0,
+		crafterProgress = true,
+		enable = true,
+		status = true,
+		beacon = down*1.1 + south*1.6,
+		recipeTags = ["refining"],
+		consumeElectricity = true,
+		energyConsume = kW(600),
+		energyDrain = kW(18),
+		collision = [0, 0, 0, 6, 8, 6],
+		iconD = 5,
+		iconV = 0.75,
+		health = 150,
+		pipeHints = true,
+		pipeInputConnections = [
+			point_rotate([1.5, -3.5, 3.0], up, -0.0),
+			point_rotate([1.5, -3.5, 3.0], up, -90.0),
+			point_rotate([1.5, -3.5, 3.0], up, -180.0),
+			point_rotate([1.5, -3.5, 3.0], up, -270.0),
+		],
+		pipeOutputConnections = [
+			point_rotate([1.5, -3.5, -3.0], up, -0.0),
+			point_rotate([1.5, -3.5, -3.0], up, -90.0),
+			point_rotate([1.5, -3.5, -3.0], up, -180.0),
+			point_rotate([1.5, -3.5, -3.0], up, -270.0),
+		],
+		materials = {
+			"copper-sheet" = 5,
+			"brick" = 5,
+			"steel-frame" = 5,
+			"circuit-board" = 5,
+		},
+		states = states,
+		statesShow = statesShow,
+		parts = [
+			{
+				color = 0x999999ff,
+				gloss = 32,
+				translate = up*-4,
+				lods = [
+					["models/refinery-base-hd.stl", high, shadow],
+					["models/refinery-base-ld.stl", medium, shadow],
+					["models/refinery-base-vld.stl", verylow, noshadow],
+				],
+			},
+			{
+				color = 0xB0C4DEff,
+				gloss = 16,
+				translate = up*-4,
+				lods = [
+					["models/refinery-stack-hd.stl", high, shadow],
+					["models/refinery-stack-ld.stl", medium, shadow],
+					["models/refinery-stack-vld.stl", verylow, noshadow],
+				],
+			},
+			{
+				color = 0xffffffFF,
+				gloss = 8,
+				translate = up*-4,
+				lods = [
+					["models/refinery-tank-hd.stl", high, shadow],
+					["models/refinery-tank-ld.stl", medium, shadow],
+					["models/refinery-tank-vld.stl", verylow, noshadow],
+				],
+			},
+			{
+				spinner = [up,1],
+				color = 0x666666ff,
+				gloss = 16,
+				rotate = [south,90.0],
+				translate = [2.5,-2.15,1.5],
+				lods = [
+					["models/fan-hd.stl", high, shadow],
+					["models/fan-ld.stl", medium, noshadow],
+				],
+			},
+			{
+				color = 0x666666ff,
+				gloss = 16,
+				rotate = [south,-90.0],
+				translate = [-2.5,-2.15,1.5],
+				lods = [
+					["models/fan-hd.stl", high, shadow],
+					["models/fan-ld.stl", medium, noshadow],
+				],
+			},
+			{
+				color = 0x111111ff,
+				smoke = {
+					direction = up,
+					particlesMax = 1200,
+					particlesPerTick = 10,
+					particleRadius = 0.01,
+					emitRadius = 0.25,
+					spreadFactor = 0.01,
+					tickRadiusFactor = 0.005,
+					tickDirectionFactor = 0.05,
+					tickDecayFactor = 0.99,
+					tickLifeLower = 60,
+					tickLifeUpper = 180,
+				},
+				translate = [1.6,4,-1.6],
+			},
+			{
+				flame = true,
+				scale = [1.1,1.5,1.1],
+				translate = [1.6,4.25,-1.6],
+			},
+		]
+	})
+end()
